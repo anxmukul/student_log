@@ -1,13 +1,16 @@
 #its a menu driven programme which will perform different task according to different user input
-puts "Enter number between 1-5, and the number has following tasks\n"
-puts "1. Show list of all student.\n2. Find student by roll.\n3. Find student by name.\n"
-puts "4. Add a new student.\n5. Close the programme.\n"
-puts "Enter any number\n"
-#methods 
 def add 
-    puts "You are in add function\n"
+    puts "Enter the number of student\n"
+    num = gets.chomp.to_i
+    student_array = []
+    puts "Enter name of each student\n"
+    num.times do
+        name = gets.chomp
+        student_array<<name
+    end
+    puts "\n"
+    puts student_array
 end
-
 def search_roll
     puts "you are in search by roll function\n"
 end
@@ -19,10 +22,14 @@ end
 def list
     puts "here is the list of all student\n"
 end
-number = gets.chomp.to_i #taking input from user
+puts "Enter number between 1-5, and the number has following tasks\n"
+puts "1. Show list of all student.\n2. Find student by roll.\n3. Find student by name.\n"
+puts "4. Add a new student.\n5. Close the programme.\n"
+puts "Enter any number\n"
 
+number = gets.chomp.to_i            #taking input from user
 if number == 1
-    puts "you want the list of all stuents\n"
+    puts "You want list of all student\n"
     list.call
 elsif number == 2
     puts "You want to find student by roll\n"
@@ -34,5 +41,5 @@ elsif number == 4
     puts  "you want to add student\n"
     add.call
 else 
-    puts "Try again\n"
+    puts "Enter number between 1-5\n"
 end
