@@ -1,19 +1,20 @@
-$name_array = []
-$roll_array = []
-$class_array = []
-$sec_array = []
+
 #its a menu driven programme which will perform different task according to different user input
 def add 
-    student = Struct.new(:name, :std, :sec) do
+    student = Struct.new(:name, :roll, :std, :sec) do
         def details
-        "Name: #{name}\nClass: #{std}\nSec: #{sec}"
+        "Name: #{name}\nRoll no: #{roll}\nClass: #{std}\nSec: #{sec}"
         end
     end
+    puts "Enter name\n"
     Name = gets.chomp
+    puts "Enter roll\n"
+    Roll = gets.chomp
+    puts "Enter class\n"
     Standard = gets.chomp
+    puts "Enter section\n"
     Section = gets.chomp
-    a = student.new("#{Name}", "#{Standard}", "#{Section}")
-    puts a.details
+    a = student.new("#{Name}", "#{Roll}", "#{Standard}", "#{Section}")
 end
 
 def search_roll
@@ -26,10 +27,6 @@ end
 
 def list
     puts "here is the list of all student\n"
-    puts name_array
-    puts roll_array
-    puts class_array
-    puts roll_array
 end
 puts "Enter number between 1-5, and the number has following tasks\n"
 puts "1. Show list of all student.\n2. Find student by roll.\n3. Find student by name.\n"
