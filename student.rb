@@ -4,22 +4,16 @@ $class_array = []
 $sec_array = []
 #its a menu driven programme which will perform different task according to different user input
 def add 
-    puts "Enter name of student\n"
-    name_array = []
-        name = gets.chomp
-        name_array<<name
-    puts "Enter the roll no.\n"
-    roll_array = []
-        roll = gets.chomp
-        roll_array<<roll
-    puts "Enter the standard\n"
-    class_array = []
-        std = gets.chomp
-        class_array<<std
-    puts "Enter the sec\n"
-    sec_array = []
-        sec = gets.chomp
-        sec_array<<sec   
+    student = Struct.new(:name, :std, :sec) do
+        def details
+        "Name: #{name}\nClass: #{std}\nSec: #{sec}"
+        end
+    end
+    Name = gets.chomp
+    Standard = gets.chomp
+    Section = gets.chomp
+    a = student.new("#{Name}", "#{Standard}", "#{Section}")
+    puts a.details
 end
 
 def search_roll
@@ -41,7 +35,6 @@ puts "Enter number between 1-5, and the number has following tasks\n"
 puts "1. Show list of all student.\n2. Find student by roll.\n3. Find student by name.\n"
 puts "4. Add a new student.\n5. Close the programme.\n"
 
-10.times {
 puts "Enter any number\n"   
 number = gets.chomp.to_i            #taking input from user
 if number == 1
@@ -59,4 +52,3 @@ elsif number == 4
 else 
     puts "Enter number between 1-5\n"
 end
-}
