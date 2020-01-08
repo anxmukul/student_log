@@ -41,8 +41,7 @@ puts "Enter number between 1-5, and the number has following tasks\n"
 puts "1. Show list of all student.\n2. Find student by roll.\n3. Find student by name.\n"
 puts "4. Add a new student.\n5. Close the programme.\n"
 puts "Enter any number\n"
-
-while 1>0    
+   
 number = gets.chomp.to_i            #taking input from user
 if number == 1
     puts "You want list of all student\n"
@@ -58,5 +57,4 @@ elsif number == 4
     add.call
 else 
     puts "Enter number between 1-5\n"
-end
 end
