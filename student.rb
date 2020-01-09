@@ -1,39 +1,43 @@
 
-#its a menu driven programme which will perform different task according to different user input
+#its a menu driven programme which will perform different task according to different user input    
 def add 
     student = Struct.new(:name, :roll, :std, :sec) do
         def details
         "Name: #{name}\nRoll no: #{roll}\nClass: #{std}\nSec: #{sec}"
         end
     end
-    puts "Enter name\n"
-    Name = gets.chomp
-    puts "Enter roll\n"
-    Roll = gets.chomp
-    puts "Enter class\n"
-    Standard = gets.chomp
-    puts "Enter section\n"
-    Section = gets.chomp
-    a = student.new("#{Name}", "#{Roll}", "#{Standard}", "#{Section}")
+        puts "Enter name\n"
+        @Name = gets.chomp
+        puts "Enter roll\n"
+        @Roll = gets.chomp
+        puts "Enter standard\n"
+        @Standard = gets.chomp
+        puts "Enter section\n"
+        @Section = gets.chomp
+        a = student.new("#{@Name}", "#{@Roll}", "#{@Standard}", "#{@Section}") 
+        puts a.details 
+
 end
 
 def search_roll
-    puts "you are in search by roll function\n"
+puts "you are in search by roll function\n"
 end
 
 def search_name
-    puts "you are in search by name function\n"
+puts "you are in search by name function\n"
 end
 
 def list
     puts "here is the list of all student\n"
+    #puts a.details
 end
 puts "Enter number between 1-5, and the number has following tasks\n"
 puts "1. Show list of all student.\n2. Find student by roll.\n3. Find student by name.\n"
 puts "4. Add a new student.\n5. Close the programme.\n"
 
+loop do             # initializing infinite loop of 1s time time interval
 puts "Enter any number\n"   
-number = gets.chomp.to_i            #taking input from user
+    number = gets.chomp.to_i            #taking input from user and converting into integer
 if number == 1
     #puts "You want list of all student\n"
     list.call
@@ -48,4 +52,6 @@ elsif number == 4
     add.call
 else 
     puts "Enter number between 1-5\n"
+end
+sleep (1)
 end
