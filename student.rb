@@ -19,7 +19,7 @@ class Student
         end
  
     def list
-        puts $a.details
+        $a.each { |x| puts x}
     end
 
     def search_roll
