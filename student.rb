@@ -8,13 +8,13 @@ class Student
             end
         end
             puts "Enter name of the student\n"
-            $Name = gets.chomp
+            $Name = gets.chomp.capitalize()
             puts "Enter the roll no of the student\n"
             $Roll = gets.chomp
             puts "Enter the standard of the student\n"
             $Standard = gets.chomp
             puts "Enter the section of the student\n"
-            $Section = gets.chomp
+            $Section = gets.chomp.capitalize()
             $a = @student.new("#{$Name}", "#{$Roll}", "#{$Standard}", "#{$Section}")
         end
  
