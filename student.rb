@@ -33,16 +33,25 @@ class Student
   #puts array[0].show_details
   #=end
   
-  while 1>0 do      #initiating infinite loop
+puts "Enter number between 1-5, and the number has following tasks\n"
+puts "1. Add a new student.\n2. Show list of all student.\n3. Find student by name.\n"
+puts "4. Find student by roll.\n5. Close the programme.\n"
+ 
+while 1>0 do      #initiating infinite loop
     puts "Enter any number\n"
-    num = gets.chomp.to_i
+    num =   gets.chomp.to_i
     if num == 1
+      puts "Enter name of the student\n"
       name = gets.chomp
+      puts "Enter the roll no.\n"
       roll_number = gets.chomp
-      section = gets.chomp
+      puts "Enter the club joined by student\n"
       club = gets.chomp
+      puts "Enter standard of the standard\n"
       standard = gets.chomp
-      new_student = Student.new(name, standard, roll_number, section, club)
+      puts "Enter section of student\n"
+      section = gets.chomp
+      new_student = Student.new(name, standard, roll_number, section, club) 
       student_array<<new_student
   
     elsif num == 2
@@ -75,7 +84,7 @@ class Student
           break
         end
       end
-    else
+    elsif num == 5
       break
     end
   end
