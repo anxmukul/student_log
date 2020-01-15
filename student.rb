@@ -47,7 +47,7 @@ while 1>0 do      #initiating infinite loop
       roll_number = gets.chomp
       puts "Enter the club joined by student\n"
       club = gets.chomp
-      puts "Enter standard of the standard\n"
+      puts "Enter standard of the student\n"
       standard = gets.chomp
       puts "Enter section of student\n"
       section = gets.chomp
