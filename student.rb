@@ -55,6 +55,6 @@ loop do
     elsif num == 5
         break
     end
-    sleep (1)
+    sleep (0.5)
 
 end
