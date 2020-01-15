@@ -24,6 +24,7 @@ class Student
   end
   student_array = []
   
+  #If Student detail is passed directly
   #mukul = Student.new("Mukul Kumar", 1, 1, 'A','Programming')
   #puts mukul.name
   #puts mukul.show_details
@@ -32,7 +33,7 @@ class Student
   #puts array[0].show_details
   #=end
   
-  while 1>0 do      
+  while 1>0 do      #initiating infinite loop
     puts "Enter any number\n"
     num = gets.chomp.to_i
     if num == 1
