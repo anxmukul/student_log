@@ -1,60 +1,80 @@
-
-#its a menu driven programme which will perform different task according to different user input    
-class Student
-    def add
-        @student = Struct.new(:name, :roll, :standard, :sec) do
-            def details
-                "Name: #{name}\nRoll no: #{roll}\nClass: #{std}\nSec: #{sec}"
-            end
-        end
-            puts "Enter name of the student\n"
-            $Name = gets.chomp.capitalize()
-            puts "Enter the roll no of the student\n"
-            $Roll = gets.chomp
-            puts "Enter the standard of the student\n"
-            $Standard = gets.chomp
-            puts "Enter the section of the student\n"
-            $Section = gets.chomp.capitalize()
-            $a = @student.new("#{$Name}", "#{$Roll}", "#{$Standard}", "#{$Section}")
-        end
- 
-    def list
-        $a.each { |x| puts x}
+#its a menu driven programme which will perform different task according to different user input 
+class Student 
+    attr_accessor :name, :standard, :roll_number, :section, :club
+    def initialize(name, standard, roll_no, section, club)
+      @name = name
+      @standard = standard
+      @roll_number = roll_no
+      @section = section
+      @club = club  
     end
-
-    def search_roll
-        puts "you are in search by roll function\n"
+  
+    def show_details
+      "Name: #{@name}\nstandard:#{@standard}\nroll_no: #{roll_number}\nsection: #{@section}\nClub: #{@club} "
     end
-        
-    def search_name
-        puts "you are in search by name function\n"
+  
+    def check_name(input_name)
+      (@name == input_name) 
     end
-
-end
-
-puts "Enter number between 1-5, and the number has following tasks\n"
-puts "1. Add a new student.\n2. Show list of all student.\n3. Find student by roll.\n"
-puts "4. Find student by name.\n5. Close the programme.\n"
-
-loop do
+    
+    def check_roll(input_roll)
+      (@roll_number == input_roll)
+    end
+  
+  end
+  student_array = []
+  
+  #mukul = Student.new("Mukul Kumar", 1, 1, 'A','Programming')
+  #puts mukul.name
+  #puts mukul.show_details
+  #abhishek = Student.new("Abhishek", 12, 10, 'B', 'Programming')
+  #array = [abhishek, mukul]
+  #puts array[0].show_details
+  #=end
+  
+  while 1>0 do      
     puts "Enter any number\n"
     num = gets.chomp.to_i
     if num == 1
-        object = Student.new
-        object.add        
+      name = gets.chomp
+      roll_number = gets.chomp
+      section = gets.chomp
+      club = gets.chomp
+      standard = gets.chomp
+      new_student = Student.new(name, standard, roll_number, section, club)
+      student_array<<new_student
+  
     elsif num == 2
-       object = Student.new
-       object.list
+      i=0
+      x = student_array.length()
+      #p student_array
+      for i in 0..x-1 do
+        puts student_array[i].show_details
+        puts i
+      end
+  
     elsif num == 3
-        object = Student.new
-        object.search_roll
-        break
+      puts "Enter any name"
+      sname = gets.chomp
+      x = student_array.length()
+      for i in 0..(x-1) do
+        if student_array[i].check_name(sname)
+          puts student_array[i].show_details
+          break
+        end
+      end
+  
     elsif num == 4
-        object = Student.new
-        object.search_name
-    elsif num == 5
-        break
+      puts "Enter roll no"
+      sroll = gets.chomp
+      x = student_array.length()
+      for i in 0..(x-1) do
+        if student_array[i].check_roll(sroll)
+          puts student_array[i].show_details
+          break
+        end
+      end
+    else
+      break
     end
-    sleep (0.5)
-
-end
+  end
