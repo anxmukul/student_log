@@ -60,7 +60,6 @@ while 1>0 do      #initiating infinite loop
       #p student_array
       for i in 0..x-1 do
         puts student_array[i].show_details
-        puts i
       end
   
     elsif num == 3
@@ -84,7 +83,9 @@ while 1>0 do      #initiating infinite loop
           break
         end
       end
+
     elsif num == 5
       break
     end
+    
   end
